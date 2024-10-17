@@ -5,6 +5,8 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
@@ -20,7 +22,20 @@
       <hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller"/>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Blaze Home">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Blaze Home 1">
+            <stringProp name="HTTPSampler.domain">blazedemo.com</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.path">/</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Blaze Home 2">
             <stringProp name="HTTPSampler.domain">blazedemo.com</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.path">/</stringProp>
@@ -34,6 +49,15 @@
           </HTTPSamplerProxy>
           <hashTree/>
         </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="-1948168983">Thread Group</stringProp>
+            <stringProp name="-1591803190">Simple Controller</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
       </hashTree>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
